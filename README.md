@@ -21,42 +21,45 @@ C#开发的excel插件，只支持office2013
 
 ![image](https://github.com/2109/ExportExcel2Lua/blob/master/pic/5.png)
 
-##目录设置
-###解析目录:parser目录
+## 目录设置
+  解析目录:parser目录
 
-###前端导出目录:导出表到此目录
+  前端导出目录:导出表到此目录
 
-###后端导出目录:导出表到此目录
+  后端导出目录:导出表到此目录
 
-##每个sheet表至少有三列
+## 每个sheet表至少有三列
 
-###第一行为类型定义
+  第一行为类型定义
 
-###第二行为中文描述(不导出)
+  第二行为中文描述(不导出)
 
-###第三行为字段名
+  第三行为字段名
 
 
-支持类型在parser/type里(可以支持扩展)
 
-#目前支持
 
-##简单类型:
-###bool
-###int
-###number
-###string
-###table
-###json
+# 目前支持(支持类型在parser/type里(可以支持扩展))
 
-数组类型:
-  array_int,array_number,array_string,array_auto
+## 简单类型:
+  `bool`
+  `int`
+  `number`
+  `string`
+  `table`
+  `json`
 
-类型修饰
+## 数组类型:
+  `array_int`
+  `array_number`
+  `array_string`
+  `array_auto`
 
-  key:每个表必有一个类型的修饰为key,用作索引此行的key
+## 类型修饰
 
-  default:代表此列可以为空
+  `key`:每个表必有一个类型的修饰为key,用作索引此行的key
 
-  unique:此列的值不能重复
+  `default`:代表此列可以为空
+
+  `unique`:此列的值不能重复
 
