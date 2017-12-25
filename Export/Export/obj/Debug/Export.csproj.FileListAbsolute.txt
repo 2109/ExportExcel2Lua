@@ -1,0 +1,43 @@
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\obj\Debug\Export.Properties.Resources.resources
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\obj\Debug\Export.Ribbon1.resources
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\obj\Debug\Export.csproj.GenerateResource.Cache
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\bin\Debug\Export.dll
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\bin\Debug\Export.pdb
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\bin\Debug\Export.dll.manifest
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\bin\Debug\Export.vsto
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\obj\Debug\Export.dll
+c:\users\mrq\documents\visual studio 2013\Projects\Export\Export\obj\Debug\Export.pdb
+D:\work\excel2lua\Export\Export\bin\Debug\Export.dll
+D:\work\excel2lua\Export\Export\bin\Debug\Export.pdb
+D:\work\excel2lua\Export\Export\bin\Debug\Export.dll.manifest
+D:\work\excel2lua\Export\Export\bin\Debug\Export.vsto
+D:\work\excel2lua\Export\Export\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+D:\work\excel2lua\Export\Export\obj\Debug\Export.csprojResolveAssemblyReference.cache
+D:\work\excel2lua\Export\Export\obj\Debug\Export.Properties.Resources.resources
+D:\work\excel2lua\Export\Export\obj\Debug\Export.Ribbon1.resources
+D:\work\excel2lua\Export\Export\obj\Debug\Export.csproj.GenerateResource.Cache
+D:\work\excel2lua\Export\Export\obj\Debug\Export.dll
+D:\work\excel2lua\Export\Export\obj\Debug\Export.pdb
+D:\work\ExportExcel2Lua\Export\Export\bin\Debug\Export.dll
+D:\work\ExportExcel2Lua\Export\Export\bin\Debug\Export.pdb
+D:\work\ExportExcel2Lua\Export\Export\bin\Debug\Export.dll.manifest
+D:\work\ExportExcel2Lua\Export\Export\bin\Debug\Export.vsto
+D:\work\ExportExcel2Lua\Export\Export\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+D:\work\ExportExcel2Lua\Export\Export\obj\Debug\Export.csprojResolveAssemblyReference.cache
+D:\work\ExportExcel2Lua\Export\Export\obj\Debug\Export.Properties.Resources.resources
+D:\work\ExportExcel2Lua\Export\Export\obj\Debug\Export.Ribbon1.resources
+D:\work\ExportExcel2Lua\Export\Export\obj\Debug\Export.csproj.GenerateResource.Cache
+D:\work\ExportExcel2Lua\Export\Export\obj\Debug\Export.dll
+D:\work\ExportExcel2Lua\Export\Export\obj\Debug\Export.pdb
+E:\workplace\ExportExcel2Lua\Export\Export\bin\Debug\Export.dll
+E:\workplace\ExportExcel2Lua\Export\Export\bin\Debug\Export.pdb
+E:\workplace\ExportExcel2Lua\Export\Export\bin\Debug\Export.dll.manifest
+E:\workplace\ExportExcel2Lua\Export\Export\bin\Debug\Export.vsto
+E:\workplace\ExportExcel2Lua\Export\Export\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.csprojResolveAssemblyReference.cache
+E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.Properties.Resources.resources
+E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.csproj.GenerateResource.Cache
+E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.dll
+E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.pdb
+E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.Ribbon.resources
