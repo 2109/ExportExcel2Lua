@@ -44,6 +44,12 @@
             this.label3 = this.Factory.CreateRibbonLabel();
             this.group2 = this.Factory.CreateRibbonGroup();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.button6 = this.Factory.CreateRibbonButton();
+            this.label4 = this.Factory.CreateRibbonLabel();
+            this.button5 = this.Factory.CreateRibbonButton();
+            this.label5 = this.Factory.CreateRibbonLabel();
+            this.button7 = this.Factory.CreateRibbonButton();
+            this.button8 = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -64,7 +70,11 @@
             this.group1.Items.Add(this.label1);
             this.group1.Items.Add(this.label2);
             this.group1.Items.Add(this.label3);
-            this.group1.Label = "目录设置";
+            this.group1.Items.Add(this.button5);
+            this.group1.Items.Add(this.button6);
+            this.group1.Items.Add(this.button7);
+            this.group1.Items.Add(this.label5);
+            this.group1.Items.Add(this.label4);
             this.group1.Name = "group1";
             // 
             // button4
@@ -103,6 +113,7 @@
             // group2
             // 
             this.group2.Items.Add(this.button1);
+            this.group2.Items.Add(this.button8);
             this.group2.Name = "group2";
             // 
             // button1
@@ -110,6 +121,39 @@
             this.button1.Label = "导表";
             this.button1.Name = "button1";
             this.button1.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ExportClick);
+            // 
+            // button6
+            // 
+            this.button6.Label = "导出目录";
+            this.button6.Name = "button6";
+            this.button6.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ExportPathClick);
+            // 
+            // label4
+            // 
+            this.label4.Label = "label4";
+            this.label4.Name = "label4";
+            // 
+            // button5
+            // 
+            this.button5.Label = "excel目录";
+            this.button5.Name = "button5";
+            this.button5.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ExcelPathClick);
+            // 
+            // label5
+            // 
+            this.label5.Label = "label5";
+            this.label5.Name = "label5";
+            // 
+            // button7
+            // 
+            this.button7.Label = "button7";
+            this.button7.Name = "button7";
+            // 
+            // button8
+            // 
+            this.button8.Label = "一键导表";
+            this.button8.Name = "button8";
+            this.button8.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ExportAllClick);
             // 
             // Ribbon
             // 
@@ -138,6 +182,12 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel label2;
         internal Microsoft.Office.Tools.Ribbon.RibbonLabel label3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button6;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel label4;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button5;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button7;
+        internal Microsoft.Office.Tools.Ribbon.RibbonLabel label5;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button8;
     }
 
     partial class ThisRibbonCollection

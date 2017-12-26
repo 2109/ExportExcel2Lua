@@ -37,6 +37,15 @@ namespace Export
 
         private void Ribbon_Load(object sender, RibbonUIEventArgs e)
         {
+            string exportPath = GetRegisterValue("export_path");
+            if (exportPath == null)
+            {
+                label4.Label = "请先设置导出目录";
+            }
+            else
+            {
+                label4.Label = exportPath;
+            }
             
             string parsePath = GetRegisterValue("parser_path");
             if (parsePath == null)
@@ -47,6 +56,7 @@ namespace Export
             {
                 label1.Label = parsePath;
             }
+
             string clientPath = GetRegisterValue("client_path");
             if (clientPath == null)
             {
@@ -56,6 +66,7 @@ namespace Export
             {
                 label2.Label = clientPath;
             }
+
             string serverPath = GetRegisterValue("server_path");
             if (serverPath == null)
             {
@@ -65,6 +76,18 @@ namespace Export
             {
                 label3.Label = serverPath;
             }
+
+            string excelPath = GetRegisterValue("excel_path");
+            if (excelPath == null)
+            {
+                label5.Label = "请先设置excel所在目录";
+            }
+            else
+            {
+                label5.Label = serverPath;
+            }
+            button7.Label = "";
+            button7.Enabled = false;
         }
 
         private string addQuote(string str)
@@ -161,6 +184,14 @@ namespace Export
                 MessageBox.Show("请先设置解析目录");
                 return;
             }
+
+            string exportPath = GetRegisterValue("export_path");
+            if (exportPath == null)
+            {
+                MessageBox.Show("请先设置导出目录");
+                return;
+            }
+
             string clientPath = GetRegisterValue("client_path");
             if (clientPath == null)
             {
@@ -235,7 +266,7 @@ namespace Export
 
             try
             {
-                ProcessStartInfo startInfo = new ProcessStartInfo(cmd, "import.lua");
+                ProcessStartInfo startInfo = new ProcessStartInfo(cmd, "export.lua");
                 startInfo.UseShellExecute = false;
                 startInfo.RedirectStandardInput = true;
                 startInfo.RedirectStandardOutput = true;
@@ -248,10 +279,124 @@ namespace Export
                 process.StartInfo = startInfo;
                 process.Start();
 
+                process.StandardInput.WriteLine(exportPath);
                 process.StandardInput.WriteLine(clientPath);
                 process.StandardInput.WriteLine(serverPath);
                 process.StandardInput.WriteLine(workBook.Name.Substring(0, workBook.Name.IndexOf('.')));
                 process.StandardInput.Write(strBuilder.ToString());
+                process.StandardInput.Close();
+
+                string stdout = process.StandardOutput.ReadToEnd();
+                string stderr = process.StandardError.ReadToEnd();
+
+                process.WaitForExit();
+                process.Close();
+
+                if (stdout.Length != 0)
+                {
+                    MessageBox.Show(stdout);
+
+                }
+                if (stderr.Length != 0)
+                {
+                    MessageBox.Show(stderr, "错误提示");
+                }
+            }
+            catch (Exception ex)
+            {
+                string err = string.Format("{0}请检查解析目录", ex.Message);
+                MessageBox.Show(err, "错误提示", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void ExportPathClick(object sender, RibbonControlEventArgs e)
+        {
+            FolderBrowserDialog path = new FolderBrowserDialog();
+
+            string oldPath = GetRegisterValue("export_path");
+            if (oldPath != null)
+                path.SelectedPath = oldPath;
+            path.ShowDialog();
+
+            SetRegisterValue("export_path", path.SelectedPath);
+
+            label4.Label = path.SelectedPath;
+        }
+
+
+        private void ExcelPathClick(object sender, RibbonControlEventArgs e)
+        {
+            FolderBrowserDialog path = new FolderBrowserDialog();
+
+            string oldPath = GetRegisterValue("excel_path");
+            if (oldPath != null)
+                path.SelectedPath = oldPath;
+            path.ShowDialog();
+
+            SetRegisterValue("excel_path", path.SelectedPath);
+
+            label5.Label = path.SelectedPath;
+        }
+
+        private void ExportAllClick(object sender, RibbonControlEventArgs e)
+        {
+            string parsePath = GetRegisterValue("parser_path");
+            if (parsePath == null)
+            {
+                MessageBox.Show("请先设置解析目录");
+                return;
+            }
+
+            string exportPath = GetRegisterValue("export_path");
+            if (exportPath == null)
+            {
+                MessageBox.Show("请先设置导出目录");
+                return;
+            }
+
+            string clientPath = GetRegisterValue("client_path");
+            if (clientPath == null)
+            {
+                MessageBox.Show("请先设置前端导出目录");
+                return;
+            }
+
+            string serverPath = GetRegisterValue("server_path");
+            if (serverPath == null)
+            {
+                MessageBox.Show("请先设置后端导出目录");
+                return;
+            }
+
+            string excelPath = GetRegisterValue("excel_path");
+            if (excelPath == null)
+            {
+                MessageBox.Show("请先设置excel所在目录");
+                return;
+            }
+
+            string cmd = string.Format("{0}\\lua.exe", parsePath);
+
+            try
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo(cmd, "export_all.lua");
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardInput = true;
+                startInfo.RedirectStandardOutput = true;
+                startInfo.RedirectStandardError = true;
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                startInfo.CreateNoWindow = true;
+                startInfo.WorkingDirectory = parsePath;
+
+                Process process = new Process();
+                process.StartInfo = startInfo;
+                process.Start();
+
+                process.StandardInput.WriteLine(exportPath);
+                process.StandardInput.WriteLine(exportPath);
+                process.StandardInput.WriteLine(clientPath);
+                process.StandardInput.WriteLine(serverPath);
                 process.StandardInput.Close();
 
                 string stdout = process.StandardOutput.ReadToEnd();
