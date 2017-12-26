@@ -1,7 +1,7 @@
 # ExportExcel2Lua
 C#开发的excel插件，只支持office2013
 
-可以把excel的数据按一定的格式导出lua表
+可以把excel(包括csv)的数据按一定的格式导出lua表
 
 打开Export\Export\bin\Debug\app.publish，点击setup.exe安装插件
 
