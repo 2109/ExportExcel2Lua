@@ -2,7 +2,7 @@ local util = require "util"
 
 
 
-local function parser(file,result,server,client)
+local function parser(file,result,export,server,client)
 	local key_field = {}
 
 	--检查类型
@@ -100,6 +100,16 @@ local function parser(file,result,server,client)
 	end
 	local serialize = require "serialize"
 	local content = serialize.pack_order(hold_table)
+
+	if not export then
+		error("导出目录不能为空")
+	end
+
+	local fd = io.open(string.format("%s/%s.lua",export,file) ,"w");  
+	fd:write(content)  
+	fd:close() 
+	print(string.format("%s\\%s.lua done",export,file))
+
 	if server ~= nil then
 		local fd = io.open(string.format("%s/%s.lua",server,file) ,"w");  
 		fd:write(content)  
