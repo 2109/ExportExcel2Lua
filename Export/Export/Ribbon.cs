@@ -77,17 +77,12 @@ namespace Export
                 label3.Label = serverPath;
             }
 
-            string excelPath = GetRegisterValue("excel_path");
-            if (excelPath == null)
-            {
-                label5.Label = "请先设置excel所在目录";
-            }
-            else
-            {
-                label5.Label = serverPath;
-            }
+            button5.Label = "";
+            button5.Enabled = false;
             button7.Label = "";
             button7.Enabled = false;
+            label5.Label = "";
+            label5.Enabled = false;
         }
 
         private string addQuote(string str)
@@ -361,7 +356,6 @@ namespace Export
                 MessageBox.Show("请先设置前端导出目录");
                 return;
             }
-
             string serverPath = GetRegisterValue("server_path");
             if (serverPath == null)
             {
@@ -369,18 +363,16 @@ namespace Export
                 return;
             }
 
-            string excelPath = GetRegisterValue("excel_path");
-            if (excelPath == null)
-            {
-                MessageBox.Show("请先设置excel所在目录");
-                return;
-            }
+            object o = System.Runtime.InteropServices.Marshal.GetActiveObject("Excel.Application");
+            Microsoft.Office.Interop.Excel._Application app = o as Microsoft.Office.Interop.Excel._Application;
+            Microsoft.Office.Interop.Excel.Workbook workBook = app.ActiveWorkbook;
 
+           
             string cmd = string.Format("{0}\\lua.exe", parsePath);
 
             try
             {
-                ProcessStartInfo startInfo = new ProcessStartInfo(cmd, "export_all.lua");
+                ProcessStartInfo startInfo = new ProcessStartInfo(cmd, "main.lua");
                 startInfo.UseShellExecute = false;
                 startInfo.RedirectStandardInput = true;
                 startInfo.RedirectStandardOutput = true;
@@ -393,10 +385,12 @@ namespace Export
                 process.StartInfo = startInfo;
                 process.Start();
 
-                process.StandardInput.WriteLine(excelPath);
                 process.StandardInput.WriteLine(exportPath);
                 process.StandardInput.WriteLine(clientPath);
                 process.StandardInput.WriteLine(serverPath);
+                process.StandardInput.WriteLine(workBook.Name);
+                process.StandardInput.WriteLine(workBook.Path);
+
                 process.StandardInput.Close();
 
                 string stdout = process.StandardOutput.ReadToEnd();
