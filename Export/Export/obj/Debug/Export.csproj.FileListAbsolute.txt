@@ -41,3 +41,14 @@ E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.csproj.GenerateResou
 E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.dll
 E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.pdb
 E:\workplace\ExportExcel2Lua\Export\Export\obj\Debug\Export.Ribbon.resources
+E:\github\ExportExcel2Lua\Export\Export\bin\Debug\Export.dll
+E:\github\ExportExcel2Lua\Export\Export\bin\Debug\Export.pdb
+E:\github\ExportExcel2Lua\Export\Export\bin\Debug\Export.dll.manifest
+E:\github\ExportExcel2Lua\Export\Export\bin\Debug\Export.vsto
+E:\github\ExportExcel2Lua\Export\Export\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+E:\github\ExportExcel2Lua\Export\Export\obj\Debug\Export.csprojResolveAssemblyReference.cache
+E:\github\ExportExcel2Lua\Export\Export\obj\Debug\Export.Properties.Resources.resources
+E:\github\ExportExcel2Lua\Export\Export\obj\Debug\Export.Ribbon.resources
+E:\github\ExportExcel2Lua\Export\Export\obj\Debug\Export.csproj.GenerateResource.Cache
+E:\github\ExportExcel2Lua\Export\Export\obj\Debug\Export.dll
+E:\github\ExportExcel2Lua\Export\Export\obj\Debug\Export.pdb

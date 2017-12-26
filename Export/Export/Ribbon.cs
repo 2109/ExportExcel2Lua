@@ -393,7 +393,7 @@ namespace Export
                 process.StartInfo = startInfo;
                 process.Start();
 
-                process.StandardInput.WriteLine(exportPath);
+                process.StandardInput.WriteLine(excelPath);
                 process.StandardInput.WriteLine(exportPath);
                 process.StandardInput.WriteLine(clientPath);
                 process.StandardInput.WriteLine(serverPath);
